@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Background Color Changer</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 150px;
+    transition: background-color 0.5s;
+}
+
+/* Heading */
+h2{
+    margin-bottom: 10px;
+}
+
+/* Buttons */
+button{
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover{
+    background-color: #0056b3;
+}
+
+/* Color text */
+#colorName{
+    font-size: 18px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+</style>
+
+</head>
+
+<body>
+
+<h2>JavaScript Event Handling</h2>
+<p>Click the button to change the background color</p>
+
+<button id="changeBtn">Change Color</button>
+<button id="resetBtn">Reset</button>
+
+<p id="colorName">Current Color: White</p>
+
+<script>
+
+// Array of colors
+var colors = ["red", "green", "blue", "orange", "purple", "yellow", "pink"];
+var index = 0;
+
+// Select buttons
+var changeButton = document.getElementById("changeBtn");
+var resetButton = document.getElementById("resetBtn");
+var colorText = document.getElementById("colorName");
+
+// Change color event
+changeButton.addEventListener("click", function(){
+
+    document.body.style.backgroundColor = colors[index];
+    colorText.innerHTML = "Current Color: " + colors[index];
+
+    index++;
+
+    // Reset index if end reached
+    if(index >= colors.length){
+        index = 0;
+    }
+});
+
+// Reset color event
+resetButton.addEventListener("click", function(){
+
+    document.body.style.backgroundColor = "white";
+    colorText.innerHTML = "Current Color: White";
+
+    index = 0;
+});
+
+</script>
+
+</body>
+</html>

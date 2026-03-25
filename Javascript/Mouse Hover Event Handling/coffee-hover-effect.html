@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Mouse Hover - Coffee Effect</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 80px;
+}
+
+/* Container */
+.container{
+    width: 300px;
+    margin: auto;
+    padding: 20px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    background-color: #f2f2f2;
+}
+
+/* Image */
+#image{
+    width: 250px;
+    border-radius: 10px;
+}
+
+/* Text */
+#text{
+    font-size: 18px;
+    margin-top: 15px;
+    color: #333;
+}
+</style>
+
+</head>
+
+<body>
+
+<h2>Before Coffee vs After Coffee ☕</h2>
+
+<div class="container" id="box">
+
+<img id="image" src="sleepy.jpg" alt="Before Coffee">
+
+<p id="text">I need coffee 😴</p>
+
+</div>
+
+<script>
+
+var box = document.getElementById("box");
+var image = document.getElementById("image");
+var text = document.getElementById("text");
+
+// Mouse over → After coffee
+box.addEventListener("mouseover", function(){
+    image.src = "happy.jpg";
+    text.innerHTML = "Now I'm active! 😄";
+});
+
+// Mouse out → Before coffee
+box.addEventListener("mouseout", function(){
+    image.src = "sleepy.jpg";
+    text.innerHTML = "I need coffee 😴";
+});
+
+</script>
+
+</body>
+</html>

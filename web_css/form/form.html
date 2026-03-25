@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Forms in HTML</title>
+
+    <!-- Internal CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e3f2fd;
+
+        }
+
+        .form-container {
+            width: 450px;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+    </style>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Inline CSS -->
+    <h1 style="text-align:center; color:darkblue;">Registration Form</h1>
+
+    <div class="form-container">
+
+        <form>
+
+            <label>Enter name:</label>
+            <input type="text" name="name" placeholder="Enter your name" class="input-field"><br><br>
+
+            <label>Enter email:</label>
+            <input type="email" name="email" placeholder="Enter your email" class="input-field"><br><br>
+
+            <label>Enter phone:</label>
+            <input type="tel" name="phone" placeholder="Enter your phone" class="input-field"><br><br>
+
+            <label>Enter password:</label>
+            <input type="password" name="password" class="input-field"><br><br>
+
+            <label>Select qualification:</label>
+            <select name="qualification" class="input-field">
+                <option>High School</option>
+                <option>Higher Secondary</option>
+                <option>UG</option>
+                <option>PG</option>
+            </select><br><br>
+
+            <label>Select gender:</label><br>
+            <input type="radio" name="gender"> Male
+            <input type="radio" name="gender"> Female
+            <input type="radio" name="gender"> Other<br><br>
+
+            <label>Message:</label><br>
+            <textarea rows="5" cols="30" class="input-field"></textarea><br><br>
+
+            <label>Date of birth:</label>
+            <input type="date" class="input-field"><br><br>
+
+            <label>Upload a resume:</label>
+            <input type="file" class="input-field"><br><br>
+
+            <label>Choose your favorite color:</label>
+            <input type="color"><br><br>
+
+            <label>Subscribe to newsletter:</label>
+            <input type="checkbox"><br><br>
+
+            <input type="reset" class="btn">
+            <input type="submit" class="btn">
+
+        </form>
+    </div>
+
+</body>
+</html>

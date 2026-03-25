@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Registration Form</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+
+    /* Background Image */
+    background: url('tkm.jpg') no-repeat center center/cover;
+    height: 100vh;
+}
+
+/* Dark overlay */
+body::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5); /* dark layer */
+    z-index: -1;
+}
+
+/* Form container */
+.container{
+    width: 350px;
+    margin: auto;
+    margin-top: 80px;
+    padding: 25px;
+
+    /* Glass effect */
+    background: rgba(255,255,255,0.9);
+    border-radius: 12px;
+
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Heading */
+h2{
+    text-align: center;
+    color: #333;
+}
+
+/* Inputs */
+input{
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+/* Button */
+button{
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(to right, #28a745, #218838);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Button hover */
+button:hover{
+    background: linear-gradient(to right, #218838, #1e7e34);
+}
+
+/* Error message */
+#error{
+    color: red;
+    text-align: center;
+    font-size: 14px;
+}
+</style>
+
+<script>
+function validateForm()
+{
+    var name = document.getElementById("name").value.trim();
+    var age = document.getElementById("age").value;
+    var email = document.getElementById("email").value.trim();
+    var phone = document.getElementById("phone").value.trim();
+    var pass = document.getElementById("pass").value;
+    var cpass = document.getElementById("cpass").value;
+
+    var error = document.getElementById("error");
+
+    // Name validation
+    if(name === "")
+    {
+        error.innerHTML = "Name cannot be empty";
+        return false;
+    }
+
+    // Age validation
+    if(age === "" || isNaN(age) || age < 18)
+    {
+        error.innerHTML = "Age must be 18 or above";
+        return false;
+    }
+
+    // Email validation
+    if(email === "" || email.indexOf("@") === -1 || email.indexOf(".") === -1)
+    {
+        error.innerHTML = "Enter valid email";
+        return false;
+    }
+
+    // Phone validation
+    if(phone.length !== 10 || isNaN(phone))
+    {
+        error.innerHTML = "Phone must be 10 digits";
+        return false;
+    }
+
+    // Password validation
+    if(pass.length < 6)
+    {
+        error.innerHTML = "Password must be at least 6 characters";
+        return false;
+    }
+
+    // Confirm password
+    if(pass !== cpass)
+    {
+        error.innerHTML = "Passwords do not match";
+        return false;
+    }
+
+    // Clear error
+    error.innerHTML = "";
+
+    // Redirect
+    window.location.href = "success.html";
+    return false;
+}
+</script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Student Registration</h2>
+
+<p id="error"></p>
+
+<form onsubmit="return validateForm()">
+
+<input type="text" id="name" placeholder="Enter Name">
+
+<input type="number" id="age" placeholder="Enter Age">
+
+<input type="text" id="email" placeholder="Enter Email">
+
+<input type="text" id="phone" placeholder="Enter Phone">
+
+<input type="password" id="pass" placeholder="Enter Password">
+
+<input type="password" id="cpass" placeholder="Confirm Password">
+
+<button type="submit">Register</button>
+
+</form>
+
+</div>
+
+</body>
+</html>

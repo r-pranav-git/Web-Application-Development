@@ -1,0 +1,18 @@
+body
+{
+    background-color:lightpink;
+    font-family:Arial;
+}
+
+blockquote
+{
+    font-style: italic;
+    text-align: center;
+    color:darkslategray
+}
+
+
+p
+{
+    color:black;
+}

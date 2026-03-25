@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Portfolio</title>
+
+    <!-- Internal CSS -->
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        nav {
+            background-color: #222;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: yellow;
+        }
+
+        .section-title {
+            text-align: center;
+            color: darkblue;
+        }
+
+        .skills {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+    </style>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Inline CSS -->
+    <h1 style="text-align:center; color:red; margin-top:20px;">
+        Pranav R - Portfolio
+    </h1>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+
+        <!-- Profile Image -->
+        <div class="image-container">
+            <img src="Pranav-photo.jpg" alt="Pranav Profile Photo" class="profile-img">
+        </div>
+
+        <p class="about-text">
+            I am an MCA student passionate about Java, Python, and Web Development.
+            I enjoy building creative and efficient software solutions.
+        </p>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2 class="section-title">My Skills</h2>
+        <div class="skills">
+            <div class="card">Java</div>
+            <div class="card">Python</div>
+            <div class="card">HTML & CSS</div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2 class="section-title">Projects</h2>
+        <div class="card">Smart Place Backup System</div>
+        <div class="card">Hospital Management System</div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="section-title">Contact Me</h2>
+        <p class="contact-text">
+            Email: pranavrajeev2021@gmail.com <br>
+            Phone: 9876543210
+        </p>
+    </section>
+
+</body>
+</html>
